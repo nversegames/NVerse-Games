@@ -74,17 +74,20 @@ export default {
             }
 
             .logo {
-              width: 120px;
-              height: 120px;
+              width: 150px;
+              height: 150px;
               margin: 0 auto 30px;
-              background: linear-gradient(135deg, #e94560 0%, #8a2387 100%);
               border-radius: 30px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-size: 60px;
+              overflow: hidden;
               box-shadow: 0 10px 40px rgba(233,69,96,0.3);
               animation: float 3s ease-in-out infinite;
+              background: white;
+            }
+
+            .logo img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
             }
 
             @keyframes float {
@@ -132,7 +135,9 @@ export default {
         </head>
         <body>
           <div class="container">
-            <div class="logo">🎮</div>
+            <div class="logo">
+              <img src="https://raw.githubusercontent.com/nversegames/NVerse-Games/main/NVerseGamesLogo.png" alt="NVerse Games Logo">
+            </div>
             <h1>NVerse Games</h1>
             <p class="tagline">Создаём игры будущего</p>
             
