@@ -130,7 +130,7 @@ export default {
         <body>
           <div class="container">
             <div class="logo">
-              <img src="https://raw.githubusercontent.com/nversegames/NVerse-Games/main/NVerseGamesLogo.png" alt="NVerse Games Logo">
+              <img src="https://raw.githubusercontent.com/nversegames/NVerse-Games/main/NVerseGamesLogo.jpg" alt="NVerse Games Logo">
             </div>
             <h1>NVerse Games</h1>
             
