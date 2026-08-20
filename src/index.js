@@ -1,5 +1,6 @@
 export default {
   async fetch(request, env, ctx) {
+    // CORS для Epic Games
     const corsHeaders = {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
@@ -26,6 +27,7 @@ export default {
       });
     }
 
+    // Главная страница
     if (url.pathname === '/') {
       return new Response(`
         <!DOCTYPE html>
@@ -78,6 +80,7 @@ export default {
       });
     }
 
+    // Если ничего не найдено
     return new Response(JSON.stringify({ error: 'Not Found' }), {
       status: 404,
       headers: { 
