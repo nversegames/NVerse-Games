@@ -102,12 +102,6 @@ export default {
               text-shadow: 0 0 30px rgba(233,69,96,0.5);
             }
 
-            .tagline {
-              font-size: 18px;
-              color: #a0a0b8;
-              margin-bottom: 40px;
-            }
-
             .telegram-link {
               display: inline-block;
               padding: 15px 40px;
@@ -139,7 +133,6 @@ export default {
               <img src="https://raw.githubusercontent.com/nversegames/NVerse-Games/main/NVerseGamesLogo.png" alt="NVerse Games Logo">
             </div>
             <h1>NVerse Games</h1>
-            <p class="tagline">Создаём игры будущего</p>
             
             <a href="https://t.me/NVerseCompany" class="telegram-link">
               📱 Наши проекты в Telegram
