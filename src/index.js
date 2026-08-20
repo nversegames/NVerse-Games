@@ -1,6 +1,5 @@
 export default {
   async fetch(request, env, ctx) {
-    // CORS для Epic Games
     const corsHeaders = {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
@@ -13,7 +12,6 @@ export default {
 
     const url = new URL(request.url);
 
-    // Health check для API
     if (url.pathname === '/api/health') {
       return new Response(JSON.stringify({ 
         status: 'ok',
@@ -27,7 +25,6 @@ export default {
       });
     }
 
-    // Главная страница
     if (url.pathname === '/') {
       return new Response(`
         <!DOCTYPE html>
@@ -80,7 +77,6 @@ export default {
       });
     }
 
-    // Если ничего не найдено
     return new Response(JSON.stringify({ error: 'Not Found' }), {
       status: 404,
       headers: { 
