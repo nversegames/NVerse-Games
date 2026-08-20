@@ -19,7 +19,7 @@ export default {
         game: 'NVerse Games'
       }), {
         headers: { 
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json; charset=utf-8',
           ...corsHeaders 
         }
       });
@@ -30,6 +30,8 @@ export default {
         <!DOCTYPE html>
         <html>
         <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>NVerse Games</title>
           <style>
             body { 
@@ -73,14 +75,14 @@ export default {
         </body>
         </html>
       `, {
-        headers: { 'Content-Type': 'text/html' }
+        headers: { 'Content-Type': 'text/html; charset=utf-8' }
       });
     }
 
     return new Response(JSON.stringify({ error: 'Not Found' }), {
       status: 404,
       headers: { 
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json; charset=utf-8',
         ...corsHeaders 
       }
     });
