@@ -45,7 +45,7 @@
     }
 
     .lang-switch {
-      position: absolute;
+      position: fixed;
       top: 20px;
       right: 20px;
       z-index: 10;
@@ -62,7 +62,6 @@
       cursor: pointer;
       font-size: 14px;
       transition: all 0.3s;
-      text-decoration: none;
     }
 
     .lang-btn:hover, .lang-btn.active {
@@ -138,29 +137,58 @@
       color: #ffffff;
       border-bottom-color: #ffffff;
     }
+
+    .lang-content {
+      display: none;
+    }
+
+    .lang-content.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
   <div class="lang-switch">
-    <a href="index.html" class="lang-btn active">🇷🇺 RU</a>
-    <a href="index-en.html" class="lang-btn">🇬🇧 EN</a>
+    <button class="lang-btn active" onclick="switchLang('ru')">🇷🇺 RU</button>
+    <button class="lang-btn" onclick="switchLang('en')">🇬🇧 EN</button>
   </div>
 
   <div class="container">
     <div class="logo">
       <img src="https://raw.githubusercontent.com/nversegames/NVerse-Games/main/NVerseGamesLogo.jpg" alt="NVerse Games Logo">
     </div>
-    <h1>NVerse Games</h1>
-    
-    <a href="https://t.me/NVerse_Games" class="telegram-link">
-      📱 Наши проекты в Telegram
-    </a>
-    
-    <p class="footer">© 2026 NVerse Games. Все права защищены.</p>
-    
-    <a href="privacy-policy.html" class="policy-link">Политика конфиденциальности</a>
-    <br>
-    <a href="terms.html" class="policy-link">Условия использования</a>
+
+    <div id="ru-content" class="lang-content active">
+      <h1>NVerse Games</h1>
+      <a href="https://t.me/NVerse_Games" class="telegram-link">
+        📱 Наши проекты в Telegram
+      </a>
+      <p class="footer">© 2026 NVerse Games. Все права защищены.</p>
+      <a href="privacy-policy.html" class="policy-link">Политика конфиденциальности</a>
+      <br>
+      <a href="terms.html" class="policy-link">Условия использования</a>
+    </div>
+
+    <div id="en-content" class="lang-content">
+      <h1>NVerse Games</h1>
+      <a href="https://t.me/NVerse_Games" class="telegram-link">
+        📱 Our projects on Telegram
+      </a>
+      <p class="footer">© 2026 NVerse Games. All rights reserved.</p>
+      <a href="privacy-policy.html" class="policy-link">Privacy Policy</a>
+      <br>
+      <a href="terms.html" class="policy-link">Terms of Service</a>
+    </div>
   </div>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+      document.getElementById(lang + '-content').classList.add('active');
+
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
 </body>
 </html>
