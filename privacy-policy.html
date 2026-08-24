@@ -10,38 +10,15 @@
       font-family: 'Arial', sans-serif;
       min-height: 100vh;
       background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-      padding: 40px 20px;
-      color: #eee;
+      padding: 40px 20px; color: #eee;
     }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      padding: 40px;
-    }
-    .lang-switch {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 10;
-      display: flex;
-      gap: 10px;
-    }
+    .container { max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.05); border-radius: 20px; padding: 40px; }
+    .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 10; display: flex; gap: 10px; }
     .lang-btn {
-      padding: 10px 20px;
-      background: rgba(255,255,255,0.1);
-      color: #aaa;
-      border: 1px solid #555;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 14px;
+      padding: 10px 20px; background: rgba(255,255,255,0.1); color: #aaa;
+      border: 1px solid #555; border-radius: 25px; cursor: pointer; font-size: 14px;
     }
-    .lang-btn:hover, .lang-btn.active {
-      background: #e94560;
-      color: white;
-      border-color: #e94560;
-    }
+    .lang-btn:hover, .lang-btn.active { background: #e94560; color: white; border-color: #e94560; }
     h1 { color: #e94560; font-size: 28px; margin-bottom: 20px; text-align: center; }
     h2 { color: #4ecca3; font-size: 20px; margin-top: 25px; margin-bottom: 10px; }
     p { line-height: 1.8; margin-bottom: 12px; color: #ccc; }
@@ -54,18 +31,16 @@
 </head>
 <body>
   <div class="lang-switch">
-    <button class="lang-btn active" onclick="switchLang('ru', this)">RU</button>
-    <button class="lang-btn" onclick="switchLang('en', this)">EN</button>
+    <button class="lang-btn" onclick="setLang('ru', this)">RU</button>
+    <button class="lang-btn" onclick="setLang('en', this)">EN</button>
   </div>
 
   <div class="container">
-    <div id="ru-content" class="lang-content active">
+    <div id="ru-content" class="lang-content">
       <h1>Политика конфиденциальности - Quizmix</h1>
       <p style="text-align:center;"><strong>Последнее обновление: 24 августа 2026 г.</strong></p>
-
       <h2>1. Введение</h2>
       <p>Настоящая Политика объясняет, как NVerse Games собирает, использует, передаёт и хранит данные при использовании Quizmix.</p>
-
       <h2>2. Какие данные мы собираем</h2>
       <ul>
         <li><strong>Epic Games Account ID</strong> — уникальный идентификатор</li>
@@ -74,7 +49,6 @@
         <li><strong>Игровой прогресс</strong> — уровни, валюта, достижения</li>
         <li><strong>Статус присутствия</strong> — онлайн или офлайн</li>
       </ul>
-
       <h2>3. Как мы собираем данные</h2>
       <ul>
         <li>Вход в Игру через Epic Games</li>
@@ -82,7 +56,6 @@
         <li>Онлайн-функции (лобби, мультиплеер)</li>
         <li>Сохранение прогресса в облако</li>
       </ul>
-
       <h2>4. Как мы используем данные</h2>
       <ul>
         <li>Аутентификация</li>
@@ -91,16 +64,12 @@
         <li>Улучшение Игры</li>
         <li>Поддержка</li>
       </ul>
-
       <h2>5. Как мы передаём данные</h2>
       <p>Мы передаём данные Epic Games (провайдер услуг) и другим игрокам (в мультиплеере). Мы НЕ продаём данные.</p>
-
       <h2>6. Как мы храним данные</h2>
       <p>Данные хранятся пока аккаунт активен. Аналитика — до 12 месяцев.</p>
-
       <h2>7. Безопасность</h2>
       <p>Все данные передаются по HTTPS/TLS. Данные хранятся в Epic Online Services.</p>
-
       <h2>8. Ваши права</h2>
       <ul>
         <li>Доступ к данным</li>
@@ -108,17 +77,12 @@
         <li>Удаление данных</li>
         <li>Отзыв согласия</li>
       </ul>
-
       <h2>9. Контакты</h2>
       <p><strong>Email:</strong> <a href="mailto:nversegames.support@gmail.com">nversegames.support@gmail.com</a></p>
-      <p><strong>Время ответа:</strong> 5 рабочих дней</p>
-
       <h2>10. Конфиденциальность детей</h2>
       <p>Мы не собираем данные детей до 13 лет без согласия родителей.</p>
-
       <h2>11. Изменения</h2>
       <p>Политика может обновляться. Изменения публикуются на этой странице.</p>
-
       <h2>12. Сторонние сервисы</h2>
       <p>Epic Games обрабатывает данные по своей политике: <a href="https://www.epicgames.com/site/en-US/privacypolicy">ссылка</a></p>
     </div>
@@ -126,10 +90,8 @@
     <div id="en-content" class="lang-content">
       <h1>Privacy Policy - Quizmix</h1>
       <p style="text-align:center;"><strong>Last updated: August 24, 2026</strong></p>
-
       <h2>1. Introduction</h2>
       <p>This Privacy Policy explains how NVerse Games collects, uses, shares, and retains data when you use Quizmix.</p>
-
       <h2>2. Data We Collect</h2>
       <ul>
         <li><strong>Epic Games Account ID</strong> - unique identifier</li>
@@ -138,7 +100,6 @@
         <li><strong>Game progress</strong> - levels, currency, achievements</li>
         <li><strong>Online presence</strong> - online or offline status</li>
       </ul>
-
       <h2>3. How We Collect Data</h2>
       <ul>
         <li>Login via Epic Games</li>
@@ -146,7 +107,6 @@
         <li>Online features (lobbies, multiplayer)</li>
         <li>Cloud save</li>
       </ul>
-
       <h2>4. How We Use Data</h2>
       <ul>
         <li>Authentication</li>
@@ -155,16 +115,12 @@
         <li>Improve the Game</li>
         <li>Customer support</li>
       </ul>
-
       <h2>5. How We Share Data</h2>
-      <p>We share data with Epic Games (service provider) and other players (in multiplayer). We do NOT sell data.</p>
-
+      <p>We share data with Epic Games (service provider). We do NOT sell data.</p>
       <h2>6. How We Retain Data</h2>
-      <p>Data is retained while your account is active. Analytics - up to 12 months.</p>
-
+      <p>Data is retained while your account is active.</p>
       <h2>7. Security</h2>
-      <p>All data is transmitted over HTTPS/TLS. Data is stored securely in Epic Online Services.</p>
-
+      <p>All data is transmitted over HTTPS/TLS.</p>
       <h2>8. Your Rights</h2>
       <ul>
         <li>Access your data</li>
@@ -172,24 +128,19 @@
         <li>Delete data</li>
         <li>Withdraw consent</li>
       </ul>
-
       <h2>9. Contact</h2>
       <p><strong>Email:</strong> <a href="mailto:nversegames.support@gmail.com">nversegames.support@gmail.com</a></p>
-      <p><strong>Response time:</strong> 5 business days</p>
-
       <h2>10. Children's Privacy</h2>
-      <p>We do not knowingly collect data from children under 13 without parental consent.</p>
-
+      <p>We do not knowingly collect data from children under 13.</p>
       <h2>11. Changes</h2>
-      <p>This policy may be updated. Changes are posted on this page.</p>
-
+      <p>This policy may be updated.</p>
       <h2>12. Third-Party Services</h2>
-      <p>Epic Games handles data per their policy: <a href="https://www.epicgames.com/site/en-US/privacypolicy">link</a></p>
+      <p>Epic Games: <a href="https://www.epicgames.com/site/en-US/privacypolicy">link</a></p>
     </div>
   </div>
 
   <script>
-    function switchLang(lang, btn) {
+    function setLang(lang, btn) {
       document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
       document.getElementById(lang + '-content').classList.add('active');
       document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
@@ -197,15 +148,17 @@
       localStorage.setItem('lang', lang);
     }
 
-    window.onload = function() {
-      var savedLang = localStorage.getItem('lang');
-      if (savedLang === 'en') {
-        document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
-        document.getElementById('en-content').classList.add('active');
-        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.lang-btn')[1].classList.add('active');
-      }
-    };
+    function applyLang(lang) {
+      document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+      document.getElementById(lang + '-content').classList.add('active');
+      var btns = document.querySelectorAll('.lang-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      if (lang === 'ru') btns[0].classList.add('active');
+      else btns[1].classList.add('active');
+    }
+
+    var saved = localStorage.getItem('lang') || 'ru';
+    applyLang(saved);
   </script>
 </body>
 </html>
