@@ -10,38 +10,15 @@
       font-family: 'Arial', sans-serif;
       min-height: 100vh;
       background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-      padding: 40px 20px;
-      color: #eee;
+      padding: 40px 20px; color: #eee;
     }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      padding: 40px;
-    }
-    .lang-switch {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 10;
-      display: flex;
-      gap: 10px;
-    }
+    .container { max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.05); border-radius: 20px; padding: 40px; }
+    .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 10; display: flex; gap: 10px; }
     .lang-btn {
-      padding: 10px 20px;
-      background: rgba(255,255,255,0.1);
-      color: #aaa;
-      border: 1px solid #555;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 14px;
+      padding: 10px 20px; background: rgba(255,255,255,0.1); color: #aaa;
+      border: 1px solid #555; border-radius: 25px; cursor: pointer; font-size: 14px;
     }
-    .lang-btn:hover, .lang-btn.active {
-      background: #e94560;
-      color: white;
-      border-color: #e94560;
-    }
+    .lang-btn:hover, .lang-btn.active { background: #e94560; color: white; border-color: #e94560; }
     h1 { color: #e94560; font-size: 28px; margin-bottom: 20px; text-align: center; }
     h2 { color: #4ecca3; font-size: 20px; margin-top: 25px; margin-bottom: 10px; }
     p { line-height: 1.8; margin-bottom: 12px; color: #ccc; }
@@ -54,12 +31,12 @@
 </head>
 <body>
   <div class="lang-switch">
-    <button class="lang-btn active" onclick="switchLang('ru', this)">RU</button>
-    <button class="lang-btn" onclick="switchLang('en', this)">EN</button>
+    <button class="lang-btn" onclick="setLang('ru', this)">RU</button>
+    <button class="lang-btn" onclick="setLang('en', this)">EN</button>
   </div>
 
   <div class="container">
-    <div id="ru-content" class="lang-content active">
+    <div id="ru-content" class="lang-content">
       <h1>Условия использования - Quizmix</h1>
       <p style="text-align:center;"><strong>Последнее обновление: 24 августа 2026 г.</strong></p>
       <h2>1. Принятие условий</h2>
@@ -103,7 +80,7 @@
   </div>
 
   <script>
-    function switchLang(lang, btn) {
+    function setLang(lang, btn) {
       document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
       document.getElementById(lang + '-content').classList.add('active');
       document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
@@ -111,15 +88,17 @@
       localStorage.setItem('lang', lang);
     }
 
-    window.onload = function() {
-      var savedLang = localStorage.getItem('lang');
-      if (savedLang === 'en') {
-        document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
-        document.getElementById('en-content').classList.add('active');
-        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.lang-btn')[1].classList.add('active');
-      }
-    };
+    function applyLang(lang) {
+      document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+      document.getElementById(lang + '-content').classList.add('active');
+      var btns = document.querySelectorAll('.lang-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      if (lang === 'ru') btns[0].classList.add('active');
+      else btns[1].classList.add('active');
+    }
+
+    var saved = localStorage.getItem('lang') || 'ru';
+    applyLang(saved);
   </script>
 </body>
 </html>
