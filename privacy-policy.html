@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Политика конфиденциальности - NVerse Games</title>
+  <title>Privacy Policy - NVerse Games</title>
   <style>
     * {
       margin: 0;
@@ -46,7 +46,6 @@
       cursor: pointer;
       font-size: 14px;
       transition: all 0.3s;
-      text-decoration: none;
     }
 
     .lang-btn:hover, .lang-btn.active {
@@ -88,99 +87,159 @@
     strong {
       color: #fff;
     }
+
+    .lang-content {
+      display: none;
+    }
+
+    .lang-content.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
   <div class="lang-switch">
-    <a href="privacy-policy.html" class="lang-btn active">🇷🇺 RU</a>
-    <a href="privacy-policy-en.html" class="lang-btn">🇬🇧 EN</a>
+    <button class="lang-btn active" onclick="switchLang('ru')">🇷🇺 RU</button>
+    <button class="lang-btn" onclick="switchLang('en')">🇬🇧 EN</button>
   </div>
 
   <div class="container">
-    <h1>Политика конфиденциальности - Quizmix</h1>
-    <p style="text-align:center;"><strong>Последнее обновление: 24 августа 2026 г.</strong></p>
+    <div id="ru-content" class="lang-content active">
+      <h1>Политика конфиденциальности - Quizmix</h1>
+      <p style="text-align:center;"><strong>Последнее обновление: 24 августа 2026 г.</strong></p>
 
-    <h2>1. Введение</h2>
-    <p>Настоящая Политика конфиденциальности объясняет, как NVerse Games («мы», «наш») собирает, использует, передаёт и хранит данные при использовании вами Quizmix («Игра»). Используя Игру, вы соглашаетесь с настоящей Политикой конфиденциальности.</p>
+      <h2>1. Введение</h2>
+      <p>Настоящая Политика объясняет, как NVerse Games собирает, использует, передаёт и хранит данные при использовании Quizmix.</p>
 
-    <h2>2. Какие данные мы собираем</h2>
-    <p>При использовании Quizmix мы собираем следующие данные через Epic Online Services:</p>
-    <ul>
-      <li><strong>Epic Games Account ID</strong> — уникальный идентификатор вашего аккаунта</li>
-      <li><strong>Отображаемое имя</strong> — ваше имя пользователя Epic Games</li>
-      <li><strong>Языковые предпочтения</strong> — выбранный вами язык</li>
-      <li><strong>Игровой прогресс</strong> — пройденные уровни, игровая валюта, достижения</li>
-      <li><strong>Статус присутствия</strong> — онлайн вы или офлайн</li>
-    </ul>
+      <h2>2. Какие данные мы собираем</h2>
+      <ul>
+        <li><strong>Epic Games Account ID</strong> — уникальный идентификатор</li>
+        <li><strong>Отображаемое имя</strong> — имя пользователя Epic Games</li>
+        <li><strong>Языковые предпочтения</strong> — выбранный язык</li>
+        <li><strong>Игровой прогресс</strong> — уровни, валюта, достижения</li>
+        <li><strong>Статус присутствия</strong> — онлайн или офлайн</li>
+      </ul>
 
-    <h2>3. Как мы собираем данные</h2>
-    <p>Данные собираются автоматически через Epic Online Services, когда вы:</p>
-    <ul>
-      <li>Входите в Игру через аккаунт Epic Games</li>
-      <li>Играете и делаете прогресс</li>
-      <li>Используете онлайн-функции (лобби, мультиплеер)</li>
-      <li>Сохраняете прогресс в облачное хранилище</li>
-    </ul>
+      <h2>3. Как мы собираем данные</h2>
+      <ul>
+        <li>Вход в Игру через Epic Games</li>
+        <li>Игровой прогресс</li>
+        <li>Онлайн-функции (лобби, мультиплеер)</li>
+        <li>Сохранение прогресса в облако</li>
+      </ul>
 
-    <h2>4. Как мы используем данные</h2>
-    <p>Мы используем собранные данные для следующих целей:</p>
-    <ul>
-      <li><strong>Аутентификация</strong> — проверка вашей личности для входа</li>
-      <li><strong>Сохранение прогресса</strong> — хранение и синхронизация прогресса на устройствах</li>
-      <li><strong>Онлайн-функции</strong> — мультиплеер, лобби, функции друзей</li>
-      <li><strong>Улучшение Игры</strong> — понимание того, как игроки используют Игру</li>
-      <li><strong>Поддержка</strong> — ответы на ваши запросы</li>
-    </ul>
+      <h2>4. Как мы используем данные</h2>
+      <ul>
+        <li>Аутентификация</li>
+        <li>Сохранение прогресса</li>
+        <li>Онлайн-функции</li>
+        <li>Улучшение Игры</li>
+        <li>Поддержка</li>
+      </ul>
 
-    <h2>5. Как мы передаём данные</h2>
-    <p>Мы передаём данные следующим сторонам:</p>
-    <ul>
-      <li><strong>Epic Games</strong> — как поставщик услуг Epic Online Services</li>
-      <li><strong>Другие игроки</strong> — ваше имя и онлайн-статус видны в мультиплеере</li>
-    </ul>
-    <p>Мы НЕ продаём и НЕ передаём ваши персональные данные третьим лицам для маркетинга.</p>
+      <h2>5. Как мы передаём данные</h2>
+      <p>Мы передаём данные Epic Games (провайдер услуг) и другим игрокам (в мультиплеере). Мы НЕ продаём данные.</p>
 
-    <h2>6. Как мы храним данные</h2>
-    <p>Ваши данные хранятся пока ваш аккаунт активен:</p>
-    <ul>
-      <li><strong>Игровой прогресс</strong> — в облаке Epic Online Services до удаления</li>
-      <li><strong>Информация аккаунта</strong> — управляется Epic Games</li>
-      <li><strong>Аналитика</strong> — анонимизированная, до 12 месяцев</li>
-    </ul>
+      <h2>6. Как мы храним данные</h2>
+      <p>Данные хранятся пока аккаунт активен. Аналитика — до 12 месяцев.</p>
 
-    <h2>7. Безопасность данных</h2>
-    <ul>
-      <li>Все данные передаются по зашифрованным соединениям (HTTPS/TLS)</li>
-      <li>Данные хранятся безопасно в Epic Online Services</li>
-      <li>Мы не храним пароли на наших серверах</li>
-    </ul>
+      <h2>7. Безопасность</h2>
+      <p>Все данные передаются по HTTPS/TLS. Данные хранятся в Epic Online Services.</p>
 
-    <h2>8. Ваши права</h2>
-    <p>Вы имеете право:</p>
-    <ul>
-      <li>Получать доступ к своим данным</li>
-      <li>Исправлять неточные данные</li>
-      <li>Запросить удаление данных</li>
-      <li>Отозвать согласие в любое время</li>
-      <li>Подать жалобу в надзорный орган</li>
-    </ul>
+      <h2>8. Ваши права</h2>
+      <ul>
+        <li>Доступ к данным</li>
+        <li>Исправление данных</li>
+        <li>Удаление данных</li>
+        <li>Отзыв согласия</li>
+      </ul>
 
-    <h2>9. Контакты для запросов о защите данных</h2>
-    <ul>
-      <li><strong>Email:</strong> <a href="mailto:nversegames.support@gmail.com">nversegames.support@gmail.com</a></li>
-      <li><strong>Время ответа:</strong> в течение 5 рабочих дней</li>
-    </ul>
+      <h2>9. Контакты</h2>
+      <p><strong>Email:</strong> <a href="mailto:nversegames.support@gmail.com">nversegames.support@gmail.com</a></p>
+      <p><strong>Время ответа:</strong> 5 рабочих дней</p>
 
-    <h2>10. Конфиденциальность детей</h2>
-    <p>Quizmix предназначен для широкой аудитории. Мы сознательно не собираем данные детей до 13 лет без согласия родителей.</p>
+      <h2>10. Конфиденциальность детей</h2>
+      <p>Мы не собираем данные детей до 13 лет без согласия родителей.</p>
 
-    <h2>11. Изменения политики</h2>
-    <p>Мы можем обновлять эту Политику. Изменения вступают в силу с момента публикации на этой странице.</p>
+      <h2>11. Изменения</h2>
+      <p>Политика может обновляться. Изменения публикуются на этой странице.</p>
 
-    <h2>12. Сторонние сервисы</h2>
-    <p>Quizmix использует Epic Online Services. Epic Games обрабатывает данные согласно своей политике: <a href="https://www.epicgames.com/site/en-US/privacypolicy">https://www.epicgames.com/site/en-US/privacypolicy</a></p>
+      <h2>12. Сторонние сервисы</h2>
+      <p>Epic Games обрабатывает данные по своей политике: <a href="https://www.epicgames.com/site/en-US/privacypolicy">ссылка</a></p>
+    </div>
 
-    <p style="text-align:center; margin-top:30px;"><strong>Используя Quizmix, вы подтверждаете, что прочитали и поняли эту Политику.</strong></p>
+    <div id="en-content" class="lang-content">
+      <h1>Privacy Policy - Quizmix</h1>
+      <p style="text-align:center;"><strong>Last updated: August 24, 2026</strong></p>
+
+      <h2>1. Introduction</h2>
+      <p>This Privacy Policy explains how NVerse Games collects, uses, shares, and retains data when you use Quizmix.</p>
+
+      <h2>2. Data We Collect</h2>
+      <ul>
+        <li><strong>Epic Games Account ID</strong> - unique identifier</li>
+        <li><strong>Display Name</strong> - Epic Games username</li>
+        <li><strong>Language preference</strong> - selected language</li>
+        <li><strong>Game progress</strong> - levels, currency, achievements</li>
+        <li><strong>Online presence</strong> - online or offline status</li>
+      </ul>
+
+      <h2>3. How We Collect Data</h2>
+      <ul>
+        <li>Login via Epic Games</li>
+        <li>Game progression</li>
+        <li>Online features (lobbies, multiplayer)</li>
+        <li>Cloud save</li>
+      </ul>
+
+      <h2>4. How We Use Data</h2>
+      <ul>
+        <li>Authentication</li>
+        <li>Save progress</li>
+        <li>Online features</li>
+        <li>Improve the Game</li>
+        <li>Customer support</li>
+      </ul>
+
+      <h2>5. How We Share Data</h2>
+      <p>We share data with Epic Games (service provider) and other players (in multiplayer). We do NOT sell data.</p>
+
+      <h2>6. How We Retain Data</h2>
+      <p>Data is retained while your account is active. Analytics - up to 12 months.</p>
+
+      <h2>7. Security</h2>
+      <p>All data is transmitted over HTTPS/TLS. Data is stored securely in Epic Online Services.</p>
+
+      <h2>8. Your Rights</h2>
+      <ul>
+        <li>Access your data</li>
+        <li>Correct data</li>
+        <li>Delete data</li>
+        <li>Withdraw consent</li>
+      </ul>
+
+      <h2>9. Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:nversegames.support@gmail.com">nversegames.support@gmail.com</a></p>
+      <p><strong>Response time:</strong> 5 business days</p>
+
+      <h2>10. Children's Privacy</h2>
+      <p>We do not knowingly collect data from children under 13 without parental consent.</p>
+
+      <h2>11. Changes</h2>
+      <p>This policy may be updated. Changes are posted on this page.</p>
+
+      <h2>12. Third-Party Services</h2>
+      <p>Epic Games handles data per their policy: <a href="https://www.epicgames.com/site/en-US/privacypolicy">link</a></p>
+    </div>
   </div>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+      document.getElementById(lang + '-content').classList.add('active');
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
 </body>
 </html>
