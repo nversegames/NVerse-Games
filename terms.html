@@ -54,8 +54,8 @@
 </head>
 <body>
   <div class="lang-switch">
-    <button class="lang-btn active" onclick="switchLang('ru')">🇷🇺 RU</button>
-    <button class="lang-btn" onclick="switchLang('en')">🇬🇧 EN</button>
+    <button class="lang-btn active" onclick="switchLang('ru', this)">RU</button>
+    <button class="lang-btn" onclick="switchLang('en', this)">EN</button>
   </div>
 
   <div class="container">
@@ -74,11 +74,9 @@
       </ul>
       <h2>4. Интеллектуальная собственность</h2>
       <p>Весь контент принадлежит NVerse Games.</p>
-      <h2>5. Возвраты</h2>
-      <p>Возвраты согласно платформе покупки.</p>
-      <h2>6. Ограничение ответственности</h2>
+      <h2>5. Ограничение ответственности</h2>
       <p>Игра предоставляется «как есть».</p>
-      <h2>7. Контакты</h2>
+      <h2>6. Контакты</h2>
       <p>Email: <a href="mailto:nversegames.support@gmail.com">nversegames.support@gmail.com</a></p>
     </div>
 
@@ -97,21 +95,19 @@
       </ul>
       <h2>4. Intellectual Property</h2>
       <p>All content is owned by NVerse Games.</p>
-      <h2>5. Refunds</h2>
-      <p>Refunds per purchase platform.</p>
-      <h2>6. Limitation of Liability</h2>
+      <h2>5. Limitation of Liability</h2>
       <p>The Game is provided "as is".</p>
-      <h2>7. Contact</h2>
+      <h2>6. Contact</h2>
       <p>Email: <a href="mailto:nversegames.support@gmail.com">nversegames.support@gmail.com</a></p>
     </div>
   </div>
 
   <script>
-    function switchLang(lang) {
+    function switchLang(lang, btn) {
       document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
       document.getElementById(lang + '-content').classList.add('active');
-      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
     }
   </script>
 </body>
