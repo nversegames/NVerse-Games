@@ -5,12 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NVerse Games</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
       font-family: 'Arial', sans-serif;
       min-height: 100vh;
@@ -21,7 +16,6 @@
       position: relative;
       overflow: hidden;
     }
-
     body::before {
       content: '';
       position: absolute;
@@ -32,27 +26,12 @@
       background: radial-gradient(circle, rgba(233,69,96,0.1) 0%, transparent 50%);
       animation: rotate 20s linear infinite;
     }
-
     @keyframes rotate {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-
-    .container {
-      text-align: center;
-      z-index: 1;
-      padding: 40px;
-    }
-
-    .lang-switch {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 10;
-      display: flex;
-      gap: 10px;
-    }
-
+    .container { text-align: center; z-index: 1; padding: 40px; }
+    .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 10; display: flex; gap: 10px; }
     .lang-btn {
       padding: 10px 20px;
       background: rgba(255,255,255,0.1);
@@ -63,94 +42,42 @@
       font-size: 14px;
       transition: all 0.3s;
     }
-
-    .lang-btn:hover, .lang-btn.active {
-      background: #e94560;
-      color: white;
-      border-color: #e94560;
-    }
-
+    .lang-btn:hover, .lang-btn.active { background: #e94560; color: white; border-color: #e94560; }
     .logo {
-      width: 150px;
-      height: 150px;
-      margin: 0 auto 30px;
-      border-radius: 30px;
-      overflow: hidden;
+      width: 150px; height: 150px; margin: 0 auto 30px;
+      border-radius: 30px; overflow: hidden;
       box-shadow: 0 10px 40px rgba(233,69,96,0.3);
-      animation: float 3s ease-in-out infinite;
-      background: white;
+      animation: float 3s ease-in-out infinite; background: white;
     }
-
-    .logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
+    .logo img { width: 100%; height: 100%; object-fit: cover; }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
-
-    h1 { 
-      font-size: 48px;
-      color: #ffffff;
-      margin-bottom: 15px;
-      text-shadow: 0 0 30px rgba(233,69,96,0.5);
-    }
-
+    h1 { font-size: 48px; color: #fff; margin-bottom: 15px; text-shadow: 0 0 30px rgba(233,69,96,0.5); }
     .telegram-link {
-      display: inline-block;
-      padding: 15px 40px;
+      display: inline-block; padding: 15px 40px;
       background: linear-gradient(135deg, #0088cc 0%, #005580 100%);
-      color: white;
-      text-decoration: none;
-      border-radius: 50px;
-      font-size: 18px;
-      font-weight: bold;
-      transition: all 0.3s ease;
+      color: white; text-decoration: none; border-radius: 50px;
+      font-size: 18px; font-weight: bold; transition: all 0.3s ease;
       box-shadow: 0 5px 20px rgba(0,136,204,0.3);
     }
-
-    .telegram-link:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(0,136,204,0.5);
-    }
-
-    .footer {
-      margin-top: 40px;
-      color: #666;
-      font-size: 14px;
-    }
-
+    .telegram-link:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,136,204,0.5); }
+    .footer { margin-top: 40px; color: #666; font-size: 14px; }
     .policy-link {
-      display: inline-block;
-      margin-top: 20px;
-      color: #a0a0b8;
-      text-decoration: none;
-      font-size: 14px;
-      border-bottom: 1px solid #555;
+      display: inline-block; margin-top: 20px; color: #a0a0b8;
+      text-decoration: none; font-size: 14px; border-bottom: 1px solid #555;
       transition: color 0.3s;
     }
-
-    .policy-link:hover {
-      color: #ffffff;
-      border-bottom-color: #ffffff;
-    }
-
-    .lang-content {
-      display: none;
-    }
-
-    .lang-content.active {
-      display: block;
-    }
+    .policy-link:hover { color: #fff; border-bottom-color: #fff; }
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
   </style>
 </head>
 <body>
   <div class="lang-switch">
-    <button class="lang-btn active" onclick="switchLang('ru', this)">RU</button>
-    <button class="lang-btn" onclick="switchLang('en', this)">EN</button>
+    <button class="lang-btn" onclick="setLang('ru', this)">RU</button>
+    <button class="lang-btn" onclick="setLang('en', this)">EN</button>
   </div>
 
   <div class="container">
@@ -158,31 +85,27 @@
       <img src="https://raw.githubusercontent.com/nversegames/NVerse-Games/main/NVerseGamesLogo.jpg" alt="NVerse Games Logo">
     </div>
 
-    <div id="ru-content" class="lang-content active">
+    <div id="ru-content" class="lang-content">
       <h1>NVerse Games</h1>
-      <a href="https://t.me/NVerse_Games" class="telegram-link">
-        📱 Наши проекты в Telegram
-      </a>
+      <a href="https://t.me/NVerse_Games" class="telegram-link">📱 Наши проекты в Telegram</a>
       <p class="footer">© 2026 NVerse Games. Все права защищены.</p>
-      <a href="privacy-policy.html" class="policy-link" onclick="saveLang()">Политика конфиденциальности</a>
+      <a href="privacy-policy.html" class="policy-link">Политика конфиденциальности</a>
       <br>
-      <a href="terms.html" class="policy-link" onclick="saveLang()">Условия использования</a>
+      <a href="terms.html" class="policy-link">Условия использования</a>
     </div>
 
     <div id="en-content" class="lang-content">
       <h1>NVerse Games</h1>
-      <a href="https://t.me/NVerse_Games" class="telegram-link">
-        📱 Our projects on Telegram
-      </a>
+      <a href="https://t.me/NVerse_Games" class="telegram-link">📱 Our projects on Telegram</a>
       <p class="footer">© 2026 NVerse Games. All rights reserved.</p>
-      <a href="privacy-policy.html" class="policy-link" onclick="saveLang()">Privacy Policy</a>
+      <a href="privacy-policy.html" class="policy-link">Privacy Policy</a>
       <br>
-      <a href="terms.html" class="policy-link" onclick="saveLang()">Terms of Service</a>
+      <a href="terms.html" class="policy-link">Terms of Service</a>
     </div>
   </div>
 
   <script>
-    function switchLang(lang, btn) {
+    function setLang(lang, btn) {
       document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
       document.getElementById(lang + '-content').classList.add('active');
       document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
@@ -190,20 +113,17 @@
       localStorage.setItem('lang', lang);
     }
 
-    function saveLang() {
-      // Язык уже сохранён в localStorage при переключении
+    function applyLang(lang) {
+      document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+      document.getElementById(lang + '-content').classList.add('active');
+      var btns = document.querySelectorAll('.lang-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      if (lang === 'ru') btns[0].classList.add('active');
+      else btns[1].classList.add('active');
     }
 
-    // При загрузке страницы проверяем сохранённый язык
-    window.onload = function() {
-      var savedLang = localStorage.getItem('lang');
-      if (savedLang === 'en') {
-        document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
-        document.getElementById('en-content').classList.add('active');
-        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.lang-btn')[1].classList.add('active');
-      }
-    };
+    var saved = localStorage.getItem('lang') || 'ru';
+    applyLang(saved);
   </script>
 </body>
 </html>
