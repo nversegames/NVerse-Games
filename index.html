@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,6 +42,33 @@
       text-align: center;
       z-index: 1;
       padding: 40px;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      display: flex;
+      gap: 10px;
+    }
+
+    .lang-btn {
+      padding: 10px 20px;
+      background: rgba(255,255,255,0.1);
+      color: #aaa;
+      border: 1px solid #555;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .lang-btn:hover, .lang-btn.active {
+      background: #e94560;
+      color: white;
+      border-color: #e94560;
     }
 
     .logo {
@@ -114,6 +141,11 @@
   </style>
 </head>
 <body>
+  <div class="lang-switch">
+    <a href="index.html" class="lang-btn active">🇷🇺 RU</a>
+    <a href="index-en.html" class="lang-btn">🇬🇧 EN</a>
+  </div>
+
   <div class="container">
     <div class="logo">
       <img src="https://raw.githubusercontent.com/nversegames/NVerse-Games/main/NVerseGamesLogo.jpg" alt="NVerse Games Logo">
