@@ -3,14 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Условия использования - NVerse Games</title>
+  <title>Terms of Service - NVerse Games</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
       font-family: 'Arial', sans-serif;
       min-height: 100vh;
@@ -18,82 +13,106 @@
       padding: 40px 20px;
       color: #eee;
     }
-
     .container {
       max-width: 800px;
       margin: 0 auto;
       background: rgba(255, 255, 255, 0.05);
       border-radius: 20px;
       padding: 40px;
-      backdrop-filter: blur(10px);
     }
-
-    h1 {
-      color: #e94560;
-      font-size: 28px;
-      margin-bottom: 20px;
-      text-align: center;
+    .lang-switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      display: flex;
+      gap: 10px;
     }
-
-    h2 {
-      color: #4ecca3;
-      font-size: 20px;
-      margin-top: 25px;
-      margin-bottom: 10px;
+    .lang-btn {
+      padding: 10px 20px;
+      background: rgba(255,255,255,0.1);
+      color: #aaa;
+      border: 1px solid #555;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
     }
-
-    p {
-      line-height: 1.8;
-      margin-bottom: 12px;
-      color: #ccc;
+    .lang-btn:hover, .lang-btn.active {
+      background: #e94560;
+      color: white;
+      border-color: #e94560;
     }
-
-    ul {
-      margin: 10px 0 10px 25px;
-      line-height: 1.8;
-      color: #ccc;
-    }
-
-    a {
-      color: #4ecca3;
-    }
-
-    strong {
-      color: #fff;
-    }
+    h1 { color: #e94560; font-size: 28px; margin-bottom: 20px; text-align: center; }
+    h2 { color: #4ecca3; font-size: 20px; margin-top: 25px; margin-bottom: 10px; }
+    p { line-height: 1.8; margin-bottom: 12px; color: #ccc; }
+    ul { margin: 10px 0 10px 25px; line-height: 1.8; color: #ccc; }
+    a { color: #4ecca3; }
+    strong { color: #fff; }
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Условия использования - Quizmix</h1>
-    <p style="text-align:center;"><strong>Последнее обновление: 24 августа 2026 г.</strong></p>
-
-    <h2>1. Принятие условий</h2>
-    <p>Используя Quizmix, вы соглашаетесь с настоящими Условиями использования.</p>
-
-    <h2>2. Лицензия на игру</h2>
-    <p>NVerse Games предоставляет вам личную, неисключительную, непередаваемую лицензию на использование Quizmix для личных развлекательных целей.</p>
-
-    <h2>3. Поведение пользователя</h2>
-    <p>Вы соглашаетесь не:</p>
-    <ul>
-      <li>Читерить, взламывать или использовать неавторизованные модификации</li>
-      <li>Оскорблять или преследовать других игроков</li>
-      <li>Использовать баги и уязвимости</li>
-      <li>Использовать Игру в незаконных целях</li>
-    </ul>
-
-    <h2>4. Интеллектуальная собственность</h2>
-    <p>Весь контент Quizmix, включая графику, код и дизайн, принадлежит NVerse Games.</p>
-
-    <h2>5. Политика возврата</h2>
-    <p>Возвраты обрабатываются согласно платформе, где вы приобрели Игру.</p>
-
-    <h2>6. Ограничение ответственности</h2>
-    <p>Quizmix предоставляется «как есть» без каких-либо гарантий.</p>
-
-    <h2>7. Контакты</h2>
-    <p>Email: <a href="mailto:nversegames.support@gmail.com">nversegames.support@gmail.com</a></p>
+  <div class="lang-switch">
+    <button class="lang-btn active" onclick="switchLang('ru')">🇷🇺 RU</button>
+    <button class="lang-btn" onclick="switchLang('en')">🇬🇧 EN</button>
   </div>
+
+  <div class="container">
+    <div id="ru-content" class="lang-content active">
+      <h1>Условия использования - Quizmix</h1>
+      <p style="text-align:center;"><strong>Последнее обновление: 24 августа 2026 г.</strong></p>
+      <h2>1. Принятие условий</h2>
+      <p>Используя Quizmix, вы соглашаетесь с настоящими Условиями.</p>
+      <h2>2. Лицензия</h2>
+      <p>NVerse Games предоставляет личную, неисключительную лицензию на использование Игры.</p>
+      <h2>3. Поведение</h2>
+      <ul>
+        <li>Не читерить</li>
+        <li>Не оскорблять других игроков</li>
+        <li>Не использовать баги</li>
+      </ul>
+      <h2>4. Интеллектуальная собственность</h2>
+      <p>Весь контент принадлежит NVerse Games.</p>
+      <h2>5. Возвраты</h2>
+      <p>Возвраты согласно платформе покупки.</p>
+      <h2>6. Ограничение ответственности</h2>
+      <p>Игра предоставляется «как есть».</p>
+      <h2>7. Контакты</h2>
+      <p>Email: <a href="mailto:nversegames.support@gmail.com">nversegames.support@gmail.com</a></p>
+    </div>
+
+    <div id="en-content" class="lang-content">
+      <h1>Terms of Service - Quizmix</h1>
+      <p style="text-align:center;"><strong>Last updated: August 24, 2026</strong></p>
+      <h2>1. Acceptance</h2>
+      <p>By using Quizmix, you agree to these Terms.</p>
+      <h2>2. License</h2>
+      <p>NVerse Games grants a personal, non-exclusive license to use the Game.</p>
+      <h2>3. Conduct</h2>
+      <ul>
+        <li>No cheating</li>
+        <li>No harassment</li>
+        <li>No bug exploitation</li>
+      </ul>
+      <h2>4. Intellectual Property</h2>
+      <p>All content is owned by NVerse Games.</p>
+      <h2>5. Refunds</h2>
+      <p>Refunds per purchase platform.</p>
+      <h2>6. Limitation of Liability</h2>
+      <p>The Game is provided "as is".</p>
+      <h2>7. Contact</h2>
+      <p>Email: <a href="mailto:nversegames.support@gmail.com">nversegames.support@gmail.com</a></p>
+    </div>
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+      document.getElementById(lang + '-content').classList.add('active');
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
 </body>
 </html>
