@@ -5,12 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy - NVerse Games</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
       font-family: 'Arial', sans-serif;
       min-height: 100vh;
@@ -18,16 +13,13 @@
       padding: 40px 20px;
       color: #eee;
     }
-
     .container {
       max-width: 800px;
       margin: 0 auto;
       background: rgba(255, 255, 255, 0.05);
       border-radius: 20px;
       padding: 40px;
-      backdrop-filter: blur(10px);
     }
-
     .lang-switch {
       position: fixed;
       top: 20px;
@@ -36,7 +28,6 @@
       display: flex;
       gap: 10px;
     }
-
     .lang-btn {
       padding: 10px 20px;
       background: rgba(255,255,255,0.1);
@@ -45,62 +36,26 @@
       border-radius: 25px;
       cursor: pointer;
       font-size: 14px;
-      transition: all 0.3s;
     }
-
     .lang-btn:hover, .lang-btn.active {
       background: #e94560;
       color: white;
       border-color: #e94560;
     }
-
-    h1 {
-      color: #e94560;
-      font-size: 28px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    h2 {
-      color: #4ecca3;
-      font-size: 20px;
-      margin-top: 25px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      line-height: 1.8;
-      margin-bottom: 12px;
-      color: #ccc;
-    }
-
-    ul {
-      margin: 10px 0 10px 25px;
-      line-height: 1.8;
-      color: #ccc;
-    }
-
-    a {
-      color: #4ecca3;
-    }
-
-    strong {
-      color: #fff;
-    }
-
-    .lang-content {
-      display: none;
-    }
-
-    .lang-content.active {
-      display: block;
-    }
+    h1 { color: #e94560; font-size: 28px; margin-bottom: 20px; text-align: center; }
+    h2 { color: #4ecca3; font-size: 20px; margin-top: 25px; margin-bottom: 10px; }
+    p { line-height: 1.8; margin-bottom: 12px; color: #ccc; }
+    ul { margin: 10px 0 10px 25px; line-height: 1.8; color: #ccc; }
+    a { color: #4ecca3; }
+    strong { color: #fff; }
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
   </style>
 </head>
 <body>
   <div class="lang-switch">
-    <button class="lang-btn active" onclick="switchLang('ru')">🇷🇺 RU</button>
-    <button class="lang-btn" onclick="switchLang('en')">🇬🇧 EN</button>
+    <button class="lang-btn active" onclick="switchLang('ru', this)">RU</button>
+    <button class="lang-btn" onclick="switchLang('en', this)">EN</button>
   </div>
 
   <div class="container">
@@ -234,11 +189,11 @@
   </div>
 
   <script>
-    function switchLang(lang) {
+    function switchLang(lang, btn) {
       document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
       document.getElementById(lang + '-content').classList.add('active');
-      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
     }
   </script>
 </body>
