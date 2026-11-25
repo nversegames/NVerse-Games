@@ -7,36 +7,22 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --bg-1: #0f0c29;
-      --bg-2: #302b63;
-      --bg-3: #24243e;
-      --pink: #e94560;
-      --pink-dark: #c23152;
-      --teal: #4ecca3;
+      --bg-1: #0f0c29; --bg-2: #302b63; --bg-3: #24243e;
+      --pink: #e94560; --pink-dark: #c23152; --teal: #4ecca3;
       --tg: #0088cc;
-      --glass: rgba(255,255,255,0.06);
-      --glass-border: rgba(255,255,255,0.12);
+      --glass: rgba(255,255,255,0.06); --glass-border: rgba(255,255,255,0.12);
     }
     html, body { height: 100%; }
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 50%, var(--bg-3) 100%);
-      color: #eee;
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
+      color: #eee; min-height: 100vh; overflow-x: hidden; position: relative;
+      display: flex; flex-direction: column;
     }
-
-    /* Фоновые пятна */
     body::before, body::after {
-      content: '';
-      position: fixed;
-      width: 60vmax; height: 60vmax;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.25;
-      z-index: 0;
-      pointer-events: none;
+      content: ''; position: fixed;
+      width: 60vmax; height: 60vmax; border-radius: 50%;
+      filter: blur(80px); opacity: 0.25; z-index: 0; pointer-events: none;
     }
     body::before {
       background: radial-gradient(circle, var(--pink), transparent 60%);
@@ -51,10 +37,8 @@
     @keyframes floatA { 0%,100% { transform: translate(0,0); } 50% { transform: translate(8vmax,6vmax); } }
     @keyframes floatB { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-8vmax,-6vmax); } }
 
-    /* Верхняя панель */
     .topbar {
-      position: fixed; top: 20px; right: 20px;
-      z-index: 50;
+      position: fixed; top: 20px; right: 20px; z-index: 50;
       display: flex; gap: 12px; align-items: center;
       flex-wrap: wrap; justify-content: flex-end;
     }
@@ -62,13 +46,10 @@
     .lang-btn, .top-btn {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 10px 18px;
-      background: var(--glass);
-      color: #ddd;
+      background: var(--glass); color: #ddd;
       border: 1px solid var(--glass-border);
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 600;
+      border-radius: 999px; cursor: pointer;
+      font-size: 14px; font-weight: 600;
       text-decoration: none;
       backdrop-filter: blur(10px);
       transition: all 0.25s ease;
@@ -91,20 +72,14 @@
     .top-btn.games:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(233,69,96,0.6); }
     .top-btn svg { width: 16px; height: 16px; }
 
-    /* Сцены */
     .scene {
       position: relative; z-index: 1;
-      min-height: 100vh;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      flex: 1;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
       padding: 120px 24px 60px;
       text-align: center;
-      animation: fadeIn 0.4s ease;
     }
-    .scene.active { display: flex; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
     .logo {
       width: 140px; height: 140px;
@@ -119,19 +94,15 @@
 
     h1 {
       font-size: clamp(36px, 6vw, 64px);
-      font-weight: 800;
-      letter-spacing: -1px;
+      font-weight: 800; letter-spacing: -1px;
       background: linear-gradient(135deg, #fff 0%, var(--pink) 60%, var(--teal) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
+      -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 12px;
       text-shadow: 0 0 40px rgba(233,69,96,0.3);
     }
-    .subtitle {
-      font-size: 16px; color: #aaa; margin-bottom: 30px;
-      max-width: 520px;
-    }
+    .subtitle { font-size: 16px; color: #aaa; margin-bottom: 30px; max-width: 520px; }
+
     .telegram-link {
       display: inline-flex; align-items: center; gap: 10px;
       padding: 14px 32px;
@@ -144,94 +115,29 @@
     }
     .telegram-link:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,136,204,0.55); }
 
-    .footer {
-      margin-top: 48px; color: #777; font-size: 13px; line-height: 1.9;
-    }
+    .footer { margin-top: 48px; color: #777; font-size: 13px; line-height: 1.9; }
     .footer a { color: #a0a0b8; text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
     .footer a:hover { color: #fff; border-bottom-color: #fff; }
-
-    /* Сцена игр */
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      max-width: 1000px; width: 100%;
-      margin-top: 20px;
-    }
-    .game-card {
-      position: relative;
-      display: flex; flex-direction: column;
-      padding: 26px 24px;
-      background: var(--glass);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      text-decoration: none; color: #fff;
-      text-align: left;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-    }
-    .game-card::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, transparent 40%, rgba(233,69,96,0.18));
-      opacity: 0; transition: opacity 0.3s;
-    }
-    .game-card:hover { transform: translateY(-6px); border-color: var(--pink); box-shadow: 0 16px 40px rgba(233,69,96,0.3); }
-    .game-card:hover::before { opacity: 1; }
-    .game-badge {
-      display: inline-block;
-      padding: 4px 10px;
-      background: rgba(78,204,163,0.15);
-      color: var(--teal);
-      border: 1px solid rgba(78,204,163,0.4);
-      border-radius: 999px;
-      font-size: 11px; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.5px;
-      margin-bottom: 12px;
-      align-self: flex-start;
-    }
-    .game-badge.pink { background: rgba(233,69,96,0.15); color: var(--pink); border-color: rgba(233,69,96,0.4); }
-    .game-title { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
-    .game-desc { font-size: 14px; color: #bbb; line-height: 1.6; }
-    .game-arrow {
-      margin-top: 18px; font-size: 14px; color: var(--pink); font-weight: 700;
-      display: inline-flex; align-items: center; gap: 6px;
-    }
-    .back-btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      margin-bottom: 24px;
-      padding: 10px 20px;
-      background: var(--glass); color: #ddd;
-      border: 1px solid var(--glass-border);
-      border-radius: 999px;
-      cursor: pointer; font-size: 14px; font-weight: 600;
-      transition: all 0.25s;
-    }
-    .back-btn:hover { background: var(--pink); color: #fff; border-color: var(--pink); }
   </style>
 </head>
 <body>
 
-  <!-- Верхняя панель -->
   <div class="topbar">
     <div class="lang-switch">
       <button class="lang-btn" onclick="setLang('ru', this)">RU</button>
       <button class="lang-btn" onclick="setLang('en', this)">EN</button>
     </div>
     <a href="https://www.donationalerts.com/r/nversegames" target="_blank" rel="noopener" class="top-btn support">
-      <!-- сердечко -->
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.4 2.3 4.5 6 4.5c2.2 0 3.7 1.3 4.5 2.6.8-1.3 2.3-2.6 4.5-2.6 3.7 0 5.6 3.9 4 7.3C19.5 16.4 12 21 12 21z"/></svg>
       <span data-ru="Поддержать" data-en="Support">Поддержать</span>
     </a>
-    <button class="top-btn games" onclick="showScene('games')">
-      <!-- джойстик -->
+    <a href="games.html" class="top-btn games">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 6H3a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.2a2 2 0 0 0 1.6-.8l1.4-1.9a1 1 0 0 1 .8-.4h6a1 1 0 0 1 .8.4l1.4 1.9a2 2 0 0 0 1.6.8H21a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zM8 13H6v2H4v-2H2v-2h2V9h2v2h2v2zm7.5 1a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
       <span data-ru="Наши игры" data-en="Our Games">Наши игры</span>
-    </button>
+    </a>
   </div>
 
-  <!-- Сцена 1: Главная -->
-  <section id="scene-home" class="scene active">
+  <section class="scene">
     <div class="logo">
       <img src="https://raw.githubusercontent.com/nversegames/NVerse-Games/main/NVerseGamesLogo.jpg" alt="NVerse Games Logo">
     </div>
@@ -256,60 +162,7 @@
     </div>
   </section>
 
-  <!-- Сцена 2: Наши игры -->
-  <section id="scene-games" class="scene">
-    <button class="back-btn" onclick="showScene('home')">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.4 7.4L14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg>
-      <span data-ru="Назад" data-en="Back">Назад</span>
-    </button>
-
-    <h1 data-ru="Наши игры" data-en="Our Games">Наши игры</h1>
-    <p class="subtitle" data-ru="Выбери игру и играй прямо в браузере." data-en="Pick a game and play right in your browser.">Выбери игру и играй прямо в браузере.</p>
-
-    <div class="games-grid">
-      <a href="https://nversegames.github.io/BoardGamesByNVerse/" class="game-card">
-        <span class="game-badge" data-ru="Настольные" data-en="Board">Настольные</span>
-        <div class="game-title">BoardGames</div>
-        <div class="game-desc" data-ru="Коллекция настольных игр: шашки, шахматы и другие." data-en="Collection of board games: checkers, chess and more.">Коллекция настольных игр: шашки, шахматы и другие.</div>
-        <span class="game-arrow"><span data-ru="Играть" data-en="Play">Играть</span> →</span>
-      </a>
-
-      <a href="https://nversegames.github.io/FerroidDefense/" class="game-card">
-        <span class="game-badge pink" data-ru="Экшен" data-en="Action">Экшен</span>
-        <div class="game-title">Ferroid Defense</div>
-        <div class="game-desc" data-ru="Защищай базу от атакующих монстров." data-en="Defend your base from attacking monsters.">Защищай базу от атакующих монстров.</div>
-        <span class="game-arrow"><span data-ru="Играть" data-en="Play">Играть</span> →</span>
-      </a>
-
-      <a href="https://nversegames.github.io/voxelcraft/" class="game-card">
-        <span class="game-badge" data-ru="Песочница" data-en="Sandbox">Песочница</span>
-        <div class="game-title">Voxelcraft</div>
-        <div class="game-desc" data-ru="Строй, исследуй и создавай свой мир из вокселей." data-en="Build, explore and create your own voxel world.">Строй, исследуй и создавай свой мир из вокселей.</div>
-        <span class="game-arrow"><span data-ru="Играть" data-en="Play">Играть</span> →</span>
-      </a>
-    </div>
-
-    <div class="footer">
-      <div>© 2026 NVerse Games</div>
-      <div style="margin-top:14px;">
-        <a href="privacy-policy.html" data-ru="Политика конфиденциальности" data-en="Privacy Policy">Политика конфиденциальности</a>
-        &nbsp;·&nbsp;
-        <a href="terms.html" data-ru="Условия использования" data-en="Terms of Service">Условия использования</a>
-      </div>
-    </div>
-  </section>
-
   <script>
-    // Переключение сцен
-    function showScene(name) {
-      document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
-      document.getElementById('scene-' + name).classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      // запоминаем сцену только для главной/игр — при перезагрузке вернёмся на главную
-      if (name === 'home') history.replaceState(null, '', location.pathname);
-    }
-
-    // Переключение языка
     function setLang(lang, btn) {
       document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
@@ -321,8 +174,6 @@
         el.textContent = lang === 'ru' ? el.dataset.ru : el.dataset.en;
       });
     }
-
-    // Инициализация
     var saved = localStorage.getItem('lang') || 'ru';
     var btns = document.querySelectorAll('.lang-btn');
     btns.forEach(b => b.classList.remove('active'));
